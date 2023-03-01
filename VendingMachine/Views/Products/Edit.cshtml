@@ -1,0 +1,39 @@
+﻿@model Product
+
+<form method="post" asp-action="Edit">
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class="text-primary">Edit</h2>
+            <hr />
+        </div>
+
+        <input asp-for="CategorieID" hidden />
+
+        <div class="mb-3">
+            <label asp-for="Nume"></label>
+            <input asp-for="Nume" class="form-control" />
+            <span asp-validation-for="Nume" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Cantitate"></label>
+            <input asp-for="Cantitate" class="form-control" />
+            <span asp-validation-for="Cantitate" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Pret"></label>
+            <input asp-for="Pret" class="form-control" />
+            <span asp-validation-for="Pret" class="text-danger"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width:150px">Update</button>
+        <a asp-controller="Products" asp-action="Index" class="btn btn-secondary" style="width:150px">
+            Back to list
+        </a>
+    </div>
+</form>
+
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}

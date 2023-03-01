@@ -1,0 +1,60 @@
+﻿@model ProductViewModel
+
+<form method="post">
+
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class="text-primary">Vizualizare Detalii</h2>
+        </div>
+      
+        <br> <br>
+
+        <table class="table table-bordered table-striped" style="width:100%">
+            <thead>
+                <tr>
+                    <th>
+                        ID
+                    </th>
+                    <th>
+                        Nume
+                    </th>
+                    <th>
+                        Pret
+                    </th>
+                    <th>
+                        Categorie
+                    </th>
+                </tr>
+               
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        @Model.ID
+                    </td>
+                    <td>
+                        @Model.Nume
+                    </td>
+                    <td>
+                        @Model.Pret
+                    </td>
+                    <td>
+                        @Model.CategoryName
+                    </td>
+                </tr>
+           
+            </tbody>
+        </table>
+
+        <br />
+        <a asp-controller="Products" asp-action="Index" class="btn btn-primary" style="width:150px">
+            Back to list
+        </a>
+    </div>
+</form>
+
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}
